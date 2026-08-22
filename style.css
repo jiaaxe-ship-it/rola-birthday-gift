@@ -243,15 +243,37 @@ rgba(91, 59, 115, 0.3)
 }
 
 .photo {
+  background: rgba(255, 255, 255, 0.08);
+  border: 3px solid rgba(232, 139, 181, 0.6);
+  border-radius: 25px;
+  padding: 10px;
+  overflow: hidden;
   transition: 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.photo img {
+  display: block;
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 17px;
 }
 
 .photo:hover {
-  transform: scale(1.03);
+  transform: translateY(-5px) scale(1.02);
+  border-color: var(--pink);
+  box-shadow: 0 15px 40px rgba(232, 139, 181, 0.3);
 }
 
-.photo .image-placeholder {
-  min-height: 300px;
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .photo img {
+    height: 280px;
+  }
 }
 
 /* Final Message */
