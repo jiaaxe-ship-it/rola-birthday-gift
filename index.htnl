@@ -1,0 +1,125 @@
+<!-- Hero -->
+<header class="hero">
+  <div class="stars"></div>
+
+  <p class="small-title">✨ For My Favorite Person ✨</p>
+
+  <h1>Happy Birthday, My Queen 👑</h1>
+
+  <p class="intro">
+    Today is all about you, my love.
+    You deserve all the happiness in the world.
+  </p>
+
+  <a href="#message" class="button">Open Your Surprise 💗</a>
+</header>
+
+
+<!-- Love Message -->
+<section id="message" class="section">
+  <h2>💌 A Little Message For You</h2>
+
+  <div class="card">
+    <p>
+      Happy Birthday to the most beautiful woman in my life.
+    </p>
+
+    <p>
+      I hope your day is as beautiful, sweet, and amazing as you are.
+    </p>
+
+    <p>
+      You deserve all the love, happiness, and beautiful moments
+      in the world.
+    </p>
+
+    <p>
+      I'm so lucky to have you.
+      My Queen, my Wife, and my favorite person. ❤️
+    </p>
+
+    <p class="signature">
+      I love you more than words can explain. 💜
+    </p>
+  </div>
+</section>
+
+
+<!-- Special Section -->
+<section class="section">
+  <h2>👑 My Beautiful Wife</h2>
+
+  <div class="anime-card">
+    <div class="image-placeholder">
+      Your Picture Here
+    </div>
+
+    <h3>My Queen, Always. 💜</h3>
+
+    <p>
+      No matter how many birthdays come and go,
+      I'll always be grateful that I get to celebrate
+      another one with you.
+    </p>
+  </div>
+</section>
+
+
+<!-- Memories -->
+<section class="section">
+  <h2>📸 Our Memories</h2>
+
+  <div class="gallery">
+
+    <div class="photo">
+      <div class="image-placeholder">
+        Photo 1
+      </div>
+    </div>
+
+    <div class="photo">
+      <div class="image-placeholder">
+        Photo 2
+      </div>
+    </div>
+
+    <div class="photo">
+      <div class="image-placeholder">
+        Photo 3
+      </div>
+    </div>
+
+    <div class="photo">
+      <div class="image-placeholder">
+        Photo 4
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Final Message -->
+<section class="final-message">
+
+  <h2>❤️ Forever & Always</h2>
+
+  <p>
+    Happy Birthday, my Queen.
+  </p>
+
+  <p>
+    Here's to you, to us, and to all the beautiful memories
+    we're going to make together.
+  </p>
+
+  <p>
+    I love you, my wife.
+    More than yesterday, less than tomorrow. ♾️
+  </p>
+
+  <p class="big-heart">♡</p>
+
+  <h3>Happy Birthday, My Love. 🎂💗</h3>
+
+</section>
