@@ -24,22 +24,35 @@
     You deserve all the happiness in the world.
   </p>
 
- <button class="button" onclick="openSurprise()">Open Your Surprise 💗</button>
+<button class="button" onclick="openSurprise()">Open Your Surprise 💗</button>
+
+</header>
+
 <section id="surprise" class="surprise-section">
 
   <div class="gift-container" id="gift">
-    <div class="gift-lid">
-      <div class="ribbon"></div>
-    </div>
 
     <div class="gift-box">
-      <div class="ribbon"></div>
+      <div class="gift-ribbon-vertical"></div>
+      <div class="gift-ribbon-horizontal"></div>
     </div>
+
+    <div class="gift-lid" id="giftLid">
+      <div class="gift-ribbon-vertical"></div>
+
+      <div class="gift-bow">
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
   </div>
 
   <div class="surprise-content" id="surpriseContent">
 
-    <div class="confetti">✨ 🎈 ✨ 🎉 🎈 ✨</div>
+    <div class="confetti">
+      ✨ 🎈 ✨ 🎉 🎈 ✨
+    </div>
 
     <h2>Happy Birthday Rola, My Queen 👑</h2>
 
@@ -58,57 +71,31 @@
   </div>
 
 </section>
-  <script>
 
+<script>
 function openSurprise() {
 
-  const giftScene =
-    document.getElementById("giftScene");
+  const gift = document.getElementById("gift");
+  const content = document.getElementById("surpriseContent");
 
-  const surpriseContent =
-    document.getElementById("surpriseContent");
+  gift.classList.add("shaking");
 
-
-  /* Shake the gift */
-
-  giftScene.classList.add("shake");
-
-
-  /* Open the lid */
-
-  setTimeout(() => {
-
-    giftScene.classList.remove("shake");
-
-    giftScene.classList.add("open");
-
+  setTimeout(function () {
+    gift.classList.remove("shaking");
+    gift.classList.add("open");
   }, 800);
 
-
-  /* Reveal birthday message */
-
-  setTimeout(() => {
-
-    surpriseContent.classList.add("show");
-
+  setTimeout(function () {
+    content.classList.add("show");
   }, 1500);
 
-
-  /* Smooth scroll */
-
-  setTimeout(() => {
-
-    document
-      .getElementById("surprise")
-      .scrollIntoView({
-        behavior: "smooth",
-        block: "center"
-      });
-
-  }, 1600);
-
+  setTimeout(function () {
+    document.getElementById("surprise").scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+  }, 1700);
 }
-
 </script>
 <!-- Love Message -->
 <section id="message" class="section">
