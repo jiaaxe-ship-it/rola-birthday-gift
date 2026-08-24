@@ -58,6 +58,58 @@
   </div>
 
 </section>
+  <script>
+
+function openSurprise() {
+
+  const giftScene =
+    document.getElementById("giftScene");
+
+  const surpriseContent =
+    document.getElementById("surpriseContent");
+
+
+  /* Shake the gift */
+
+  giftScene.classList.add("shake");
+
+
+  /* Open the lid */
+
+  setTimeout(() => {
+
+    giftScene.classList.remove("shake");
+
+    giftScene.classList.add("open");
+
+  }, 800);
+
+
+  /* Reveal birthday message */
+
+  setTimeout(() => {
+
+    surpriseContent.classList.add("show");
+
+  }, 1500);
+
+
+  /* Smooth scroll */
+
+  setTimeout(() => {
+
+    document
+      .getElementById("surprise")
+      .scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+
+  }, 1600);
+
+}
+
+</script>
 <!-- Love Message -->
 <section id="message" class="section">
   <h2>💌 A Little Message For You</h2>
