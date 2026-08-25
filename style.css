@@ -494,9 +494,12 @@ footer {
   width: 180px;
   height: 150px;
 
+   margin: 0 auto;
+  
   transform-origin: bottom center;
 
   z-index: 5;
+
 }
 
 
@@ -571,7 +574,7 @@ footer {
   position: absolute;
 
   left: 10;
-  top: 10px;
+  top: -4px;
 
   width: 160px;
   height: 38px;
