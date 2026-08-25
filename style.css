@@ -743,3 +743,13 @@ footer {
   text-align: center;
   width: 100%;
 }
+.section h2,
+.final-message h2,
+.final-message h3 {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  direction: ltr;
+}
