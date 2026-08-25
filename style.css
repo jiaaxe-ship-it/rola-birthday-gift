@@ -739,3 +739,7 @@ footer {
   border-radius: 0 !important;
   box-shadow: none !important;
 }
+.section h2 {
+  text-align: center;
+  width: 100%;
+}
