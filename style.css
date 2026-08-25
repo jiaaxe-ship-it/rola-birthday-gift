@@ -570,8 +570,8 @@ footer {
 .gift-lid {
   position: absolute;
 
-  left: 0;
-  top: 0px;
+  left: 10;
+  top: 10px;
 
   width: 160px;
   height: 38px;
