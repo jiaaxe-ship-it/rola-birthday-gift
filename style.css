@@ -442,69 +442,21 @@ footer {
 
 
 /* ========================================
-   GIFT SCENE
-======================================== */
-
-.gift-scene {
-  position: relative;
-  width: 260px;
-  height: 260px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-
-  margin-bottom: 60px;
-
-  perspective: 1000px;
-}
-
-
-/* Glow behind gift */
-
-.gift-glow {
-  position: absolute;
-
-  width: 200px;
-  height: 200px;
-
-  border-radius: 50%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(232, 139, 181, 0.35),
-      transparent 70%
-    );
-
-  filter: blur(20px);
-
-  opacity: 0;
-
-  transition: 1s ease;
-}
-
-
-/* ========================================
    GIFT
 ======================================== */
 
 .gift {
   position: relative;
-
   width: 180px;
   height: 150px;
-
-   margin: 0 auto;
-  
-  transform-origin: bottom center;
-
+  margin: 0 auto 60px;
+  perspective: 1000px;
   z-index: 5;
-
 }
 
 
 /* ========================================
-   BOX
+   GIFT BOX
 ======================================== */
 
 .gift-box {
@@ -518,12 +470,11 @@ footer {
 
   border-radius: 8px;
 
-  background:
-    linear-gradient(
-      135deg,
-      #e88bb5,
-      #b65d8b
-    );
+  background: linear-gradient(
+    135deg,
+    #e88bb5,
+    #b65d8b
+  );
 
   box-shadow:
     0 20px 50px rgba(0, 0, 0, 0.35),
@@ -533,9 +484,11 @@ footer {
 }
 
 
-/* Vertical ribbon */
+/* ========================================
+   VERTICAL RIBBON
+======================================== */
 
-.vertical-ribbon {
+.gift-ribbon-vertical {
   position: absolute;
 
   left: 65px;
@@ -547,13 +500,15 @@ footer {
   background: #f5c96b;
 
   box-shadow:
-    inset 0 0 10px rgba(255,255,255,0.25);
+    inset 0 0 10px rgba(255, 255, 255, 0.25);
 }
 
 
-/* Horizontal ribbon */
+/* ========================================
+   HORIZONTAL RIBBON
+======================================== */
 
-.horizontal-ribbon {
+.gift-ribbon-horizontal {
   position: absolute;
 
   left: 0;
@@ -573,20 +528,19 @@ footer {
 .gift-lid {
   position: absolute;
 
-  left: 10;
-  top: -4px;
+  left: 10px;
+  top: 26px;
 
   width: 160px;
   height: 38px;
 
   border-radius: 8px;
 
-  background:
-    linear-gradient(
-      135deg,
-      #f09bc0,
-      #d86d9d
-    );
+  background: linear-gradient(
+    135deg,
+    #f09bc0,
+    #d86d9d
+  );
 
   box-shadow:
     0 8px 20px rgba(0, 0, 0, 0.3);
@@ -597,18 +551,14 @@ footer {
 }
 
 
-/* Lid ribbon */
+/* ========================================
+   LID RIBBON
+======================================== */
 
-.lid-ribbon {
-  position: absolute;
-
-  left: 75px;
+.gift-lid .gift-ribbon-vertical {
+  left: 65px;
   top: 0;
-
-  width: 30px;
   height: 38px;
-
-  background: #f5c96b;
 }
 
 
@@ -616,11 +566,11 @@ footer {
    BOW
 ======================================== */
 
-.bow {
+.gift-bow {
   position: absolute;
 
   top: -25px;
-  left: 58px;
+  left: 48px;
 
   width: 65px;
   height: 45px;
@@ -628,7 +578,7 @@ footer {
   z-index: 20;
 }
 
-.bow span {
+.gift-bow span {
   position: absolute;
 
   width: 38px;
@@ -643,14 +593,13 @@ footer {
     50%;
 }
 
-.bow span:first-child {
+.gift-bow span:first-child {
   left: 0;
 
-  transform:
-    rotate(-30deg);
+  transform: rotate(-30deg);
 }
 
-.bow span:last-child {
+.gift-bow span:last-child {
   right: 0;
 
   transform:
@@ -660,19 +609,10 @@ footer {
 
 
 /* ========================================
-   CLOSED STATE
-======================================== */
-
-.gift-scene {
-  cursor: pointer;
-}
-
-
-/* ========================================
    SHAKE
 ======================================== */
 
-.gift-scene.shake .gift {
+.gift.shaking {
   animation:
     giftShake
     0.8s
@@ -705,7 +645,6 @@ footer {
   75% {
     transform: rotate(-2deg);
   }
-
 }
 
 
@@ -713,14 +652,12 @@ footer {
    OPEN LID
 ======================================== */
 
-.gift-scene.open .gift-lid {
-
+.gift.open .gift-lid {
   animation:
     lidOpen
     1.2s
     cubic-bezier(.17,.67,.35,1.4)
     forwards;
-
 }
 
 @keyframes lidOpen {
@@ -728,7 +665,8 @@ footer {
   0% {
     transform:
       rotate(0deg)
-      translateY(0);
+      translateY(0)
+      translateX(0);
   }
 
   100% {
@@ -737,37 +675,6 @@ footer {
       translateY(-90px)
       translateX(-25px);
   }
-
-}
-
-
-/* ========================================
-   GLOW WHEN OPEN
-======================================== */
-
-.gift-scene.open .gift-glow {
-
-  opacity: 1;
-
-  animation:
-    glowPulse
-    1.5s
-    infinite alternate;
-
-}
-
-@keyframes glowPulse {
-
-  from {
-    transform: scale(0.9);
-    opacity: 0.5;
-  }
-
-  to {
-    transform: scale(1.3);
-    opacity: 1;
-  }
-
 }
 
 
@@ -776,7 +683,6 @@ footer {
 ======================================== */
 
 .surprise-content {
-
   opacity: 0;
 
   transform:
@@ -784,14 +690,9 @@ footer {
     scale(0.85);
 
   pointer-events: none;
-
 }
 
-
-/* Reveal */
-
 .surprise-content.show {
-
   animation:
     surpriseReveal
     1.2s
@@ -799,330 +700,33 @@ footer {
     forwards;
 
   pointer-events: auto;
-
 }
 
 @keyframes surpriseReveal {
 
   0% {
-
     opacity: 0;
 
     transform:
       translateY(60px)
       scale(0.85);
-
   }
 
   60% {
-
     opacity: 1;
 
     transform:
       translateY(-10px)
       scale(1.04);
-
   }
 
   100% {
-
     opacity: 1;
 
     transform:
       translateY(0)
       scale(1);
-
   }
-
-}
-
-
-/* ========================================
-   CONFETTI
-======================================== */
-
-.confetti {
-
-  font-size: 2rem;
-
-  opacity: 0;
-
-}
-
-.surprise-content.show .confetti {
-
-  animation:
-    confettiDrop
-    1s
-    0.2s
-    ease forwards;
-
-}
-
-@keyframes confettiDrop {
-
-  0% {
-
-    opacity: 0;
-
-    transform:
-      translateY(-40px)
-      scale(0.5);
-
-  }
-
-  70% {
-
-    opacity: 1;
-
-    transform:
-      translateY(10px)
-      scale(1.1);
-
-  }
-
-  100% {
-
-    opacity: 1;
-
-    transform:
-      translateY(0)
-      scale(1);
-
-  }
-
-}
-
-
-/* ========================================
-   BIRTHDAY TITLE
-======================================== */
-
-.surprise-content h2 {
-
-  font-size:
-    clamp(
-      2rem,
-      6vw,
-      3.5rem
-    );
-
-  color: var(--pink-light);
-
-  margin:
-    20px
-    0;
-
-  text-shadow:
-    0 0 20px
-    rgba(232, 139, 181, 0.4);
-
-}
-
-
-/* ========================================
-   CAKE
-======================================== */
-
-.birthday-cake {
-
-  font-size: 90px;
-
-  opacity: 0;
-
-  transform:
-    scale(0);
-
-}
-
-.surprise-content.show
-.birthday-cake {
-
-  animation:
-    cakePop
-    0.9s
-    0.4s
-    cubic-bezier(.17,.67,.35,1.5)
-    forwards;
-
-}
-
-@keyframes cakePop {
-
-  0% {
-
-    opacity: 0;
-
-    transform:
-      scale(0)
-      rotate(-15deg);
-
-  }
-
-  70% {
-
-    opacity: 1;
-
-    transform:
-      scale(1.2)
-      rotate(5deg);
-
-  }
-
-  100% {
-
-    opacity: 1;
-
-    transform:
-      scale(1)
-      rotate(0deg);
-
-  }
-
-}
-
-
-/* ========================================
-   MESSAGE
-======================================== */
-
-.surprise-content p {
-
-  color: var(--muted);
-
-  font-size: 1.15rem;
-
-  opacity: 0;
-
-}
-
-.surprise-content.show p {
-
-  animation:
-    messageFade
-    1s
-    0.8s
-    ease
-    forwards;
-
-}
-
-@keyframes messageFade {
-
-  from {
-
-    opacity: 0;
-
-    transform:
-      translateY(20px);
-
-  }
-
-  to {
-
-    opacity: 1;
-
-    transform:
-      translateY(0);
-
-  }
-
-}
-
-
-/* ========================================
-   BALLOONS
-======================================== */
-
-.balloons {
-
-  margin-top: 25px;
-
-  font-size: 2.2rem;
-
-  opacity: 0;
-
-}
-
-.surprise-content.show .balloons {
-
-  animation:
-    balloonsFloat
-    1s
-    1s
-    ease
-    forwards;
-
-}
-
-@keyframes balloonsFloat {
-
-  0% {
-
-    opacity: 0;
-
-    transform:
-      translateY(50px);
-
-  }
-
-  100% {
-
-    opacity: 1;
-
-    transform:
-      translateY(0);
-
-  }
-
-}
-
-
-/* ========================================
-   MOBILE
-======================================== */
-
-@media (max-width: 600px) {
-
-  .surprise-section {
-
-    padding:
-      80px
-      15px;
-
-  }
-
-  .gift-scene {
-
-    transform:
-      scale(0.85);
-
-    margin-bottom:
-      35px;
-
-  }
-
-  .surprise-content h2 {
-
-    font-size:
-      2rem;
-
-  }
-
-  .birthday-cake {
-
-    font-size:
-      70px;
-
-  }
-
-  .balloons {
-
-    font-size:
-      1.8rem;
-
-  }
-
 }
 /* Fix surprise decorative elements */
 
